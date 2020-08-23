@@ -8,7 +8,7 @@ Fill the answers into the question jupyter notebook and run the result. After th
 - Compile ipynb file to tex
 
 ```
-jupyter nbconvert --to latex yourNotebookName.ipynb
+jupyter nbconvert --to latex A0218869J--HaojunGao.ipynb
 ```
 
 - Convert latex to pdf

@@ -391,7 +391,7 @@ statistics. Let's examine these sample statistics.
 The necessary parameters are already set up as below.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{3}{\boxspacing}
+\prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{pop\PYZus{}size} \PY{o}{=} \PY{l+m+mi}{10000}
 \PY{n}{pop\PYZus{}mean} \PY{o}{=} \PY{l+m+mi}{100}
@@ -427,9 +427,11 @@ the sample mean
 Answer:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{12}{\boxspacing}
+\prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{def} \PY{n+nf}{histograms}\PY{p}{(}\PY{n}{sample\PYZus{}mean\PYZus{}lst}\PY{p}{,} \PY{n}{sample\PYZus{}var\PYZus{}lst}\PY{p}{,} \PY{n}{pop\PYZus{}mean}\PY{p}{,} \PY{n}{pop\PYZus{}sd}\PY{p}{,} \PY{n}{sample\PYZus{}size}\PY{p}{,} \PY{n}{is\PYZus{}distribution}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} \PY{n}{num\PYZus{}bins} \PY{o}{=} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{14}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+\PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+\PY{k}{def} \PY{n+nf}{histograms}\PY{p}{(}\PY{n}{sample\PYZus{}mean\PYZus{}lst}\PY{p}{,} \PY{n}{sample\PYZus{}var\PYZus{}lst}\PY{p}{,} \PY{n}{pop\PYZus{}mean}\PY{p}{,} \PY{n}{pop\PYZus{}sd}\PY{p}{,} \PY{n}{sample\PYZus{}size}\PY{p}{,} \PY{n}{is\PYZus{}distribution}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,} 
+               \PY{n}{num\PYZus{}bins} \PY{o}{=} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{14}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}\PY{p}{:}
     
     \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{n}{figsize}\PY{p}{)}
     
@@ -472,11 +474,10 @@ Answer:
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{14}{\boxspacing}
+\prompt{In}{incolor}{3}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} import package}
 \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-\PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
 \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{stats} \PY{k}{import} \PY{n}{norm}\PY{p}{,} \PY{n}{chi2}
 
 \PY{c+c1}{\PYZsh{} set random seed}
@@ -499,7 +500,7 @@ Answer:
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Theoretical standard deviation of the sample mean: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{pop\PYZus{}sd}\PY{o}{/}\PY{p}{(}\PY{n}{sample\PYZus{}size}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 
 \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Theoretical mean of the sample variance: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{pop\PYZus{}sd}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Theoretical standard deviation of the sample variance: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{pop\PYZus{}sd}\PY{o}{*}\PY{o}{*}\PY{l+m+mf}{0.5}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{n}{pop\PYZus{}sd}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{sample\PYZus{}size} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Theoretical standard deviation of the sample variance: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{pop\PYZus{}sd}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{sample\PYZus{}size} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}
 
 \PY{c+c1}{\PYZsh{} overlay the theoretical distribution (not required in the assignment)}
 \PY{n}{histograms}\PY{p}{(}\PY{n}{sample\PYZus{}mean\PYZus{}lst}\PY{p}{,} \PY{n}{sample\PYZus{}var\PYZus{}lst}\PY{p}{,} \PY{n}{pop\PYZus{}mean}\PY{p}{,} \PY{n}{pop\PYZus{}sd}\PY{p}{,} \PY{n}{sample\PYZus{}size}\PY{p}{,} \PY{n}{is\PYZus{}distribution} \PY{o}{=} \PY{k+kc}{True}\PY{p}{)}
@@ -515,7 +516,7 @@ Answer:
 Theoretical mean of the sample mean: 100
 Theoretical standard deviation of the sample mean: 1.5
 Theoretical mean of the sample variance: 225
-Theoretical standard deviation of the sample variance: 8.80223487774413
+Theoretical standard deviation of the sample variance: 31.980107453341567
     \end{Verbatim}
 
     \begin{center}
@@ -548,7 +549,7 @@ dataset}\label{generation-of-the-high-dimensional-dataset}}
 We first simulate the 3rd-order polynomial datasets
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{16}{\boxspacing}
+\prompt{In}{incolor}{4}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
 \PY{c+c1}{\PYZsh{}\PYZsh{} population parameters}
@@ -585,7 +586,7 @@ variables). The resulted \(z\) is a 100*20 matrix, with each row being a
 data point with 20 dimensions.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{17}{\boxspacing}
+\prompt{In}{incolor}{5}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{7891}\PY{p}{)}
 \PY{n}{z} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{multivariate\PYZus{}normal}\PY{p}{(}\PY{n}{size} \PY{o}{=} \PY{l+m+mi}{100}\PY{p}{,} \PY{n}{mean} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{20}\PY{p}{,} \PY{n}{cov} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{identity}\PY{p}{(}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{)}
@@ -597,7 +598,7 @@ data point with 20 dimensions.
 \(x\) and \(z\) into matrices
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{59}{\boxspacing}
+\prompt{In}{incolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{train\PYZus{}x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{expand\PYZus{}dims}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{n}{z}\PY{p}{)}\PY{p}{,}\PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}
 \PY{n}{test\PYZus{}x} \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{expand\PYZus{}dims}\PY{p}{(}\PY{n}{x\PYZus{}test}\PY{p}{,} \PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{n}{z\PYZus{}test}\PY{p}{)}\PY{p}{,}\PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}
@@ -615,7 +616,7 @@ MSE.}{1. For a fixed k=15, fit a KNN model to predict y with (x, z), and measure
 Answer:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{60}{\boxspacing}
+\prompt{In}{incolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{neighbors} \PY{k}{import} \PY{n}{KNeighborsRegressor}
 \PY{k+kn}{from} \PY{n+nn}{sklearn}\PY{n+nn}{.}\PY{n+nn}{metrics} \PY{k}{import} \PY{n}{mean\PYZus{}squared\PYZus{}error} \PY{k}{as} \PY{n}{mse}
@@ -647,31 +648,56 @@ MSE.}{2. With the same data, plot the training and test MSE of the KNN model aga
 Answer:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{94}{\boxspacing}
+\prompt{In}{incolor}{8}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{def} \PY{n+nf}{train\PYZus{}model}\PY{p}{(}\PY{n}{train\PYZus{}x}\PY{p}{,} \PY{n}{test\PYZus{}x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{is\PYZus{}print} \PY{o}{=} \PY{k+kc}{True}\PY{p}{)}\PY{p}{:}
+\PY{k}{def} \PY{n+nf}{plot\PYZus{}k}\PY{p}{(}\PY{n}{mse\PYZus{}test}\PY{p}{,} \PY{n}{mse\PYZus{}train} \PY{o}{=} \PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
+    \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{mse\PYZus{}test}\PY{p}{,}  \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{marker} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{markersize} \PY{o}{=} \PY{l+m+mi}{8}\PY{p}{,} 
+                 \PY{n}{markeredgecolor} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{markerfacecolor} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Test MSE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{k}{if} \PY{n}{mse\PYZus{}train}\PY{p}{:}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{mse\PYZus{}train}\PY{p}{,}  \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{marker} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{markersize} \PY{o}{=} \PY{l+m+mi}{8}\PY{p}{,} 
+             \PY{n}{markeredgecolor} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{markerfacecolor} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{label} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Train MSE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{MSE with different K}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{train\PYZus{}model}\PY{p}{(}\PY{n}{train\PYZus{}x}\PY{p}{,} \PY{n}{test\PYZus{}x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{is\PYZus{}print} \PY{o}{=} \PY{k+kc}{True}\PY{p}{,} \PY{n}{is\PYZus{}plot} \PY{o}{=} \PY{k+kc}{False}\PY{p}{)}\PY{p}{:}
     \PY{n}{k} \PY{o}{=} \PY{l+m+mi}{0}
     \PY{c+c1}{\PYZsh{} Initialize}
-    \PY{n}{optimal\PYZus{}mse}\PY{p}{,} \PY{n}{currenct\PYZus{}mse} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}
-    \PY{k}{while} \PY{n}{optimal\PYZus{}mse} \PY{o}{==} \PY{n}{currenct\PYZus{}mse}\PY{p}{:}
+    \PY{c+c1}{\PYZsh{} Parameter \PYZsq{}not\PYZus{}improve\PYZsq{}: training will stop when performance is not improved for 10 rounds}
+    \PY{n}{optimal\PYZus{}mse}\PY{p}{,} \PY{n}{currenct\PYZus{}mse}\PY{p}{,} \PY{n}{not\PYZus{}improve} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}
+    \PY{n}{mse\PYZus{}lst\PYZus{}train}\PY{p}{,} \PY{n}{mse\PYZus{}lst\PYZus{}test} \PY{o}{=} \PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{p}{]}
+    \PY{k}{while} \PY{n}{not\PYZus{}improve} \PY{o}{\PYZlt{}} \PY{l+m+mi}{10}\PY{p}{:}
         \PY{c+c1}{\PYZsh{} set k for this training round}
         \PY{n}{k} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
         \PY{c+c1}{\PYZsh{} train \PYZam{} predict \PYZam{} measure}
         \PY{n}{knn} \PY{o}{=} \PY{n}{KNeighborsRegressor}\PY{p}{(}\PY{n}{n\PYZus{}neighbors}\PY{o}{=}\PY{n}{k}\PY{p}{)}
         \PY{n}{knn}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{n}{train\PYZus{}x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
-        \PY{n}{y\PYZus{}predict} \PY{o}{=} \PY{n}{knn}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{test\PYZus{}x}\PY{p}{)}
-        \PY{n}{currenct\PYZus{}mse} \PY{o}{=} \PY{n}{mse}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{y\PYZus{}predict}\PY{p}{)}
-        \PY{n}{optimal\PYZus{}mse} \PY{o}{=} \PY{n}{currenct\PYZus{}mse} \PY{k}{if} \PY{n}{currenct\PYZus{}mse} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{optimal\PYZus{}mse} \PY{o+ow}{or} \PY{n}{k} \PY{o}{==} \PY{l+m+mi}{1} \PY{k}{else} \PY{n}{optimal\PYZus{}mse}
+        \PY{n}{mse\PYZus{}lst\PYZus{}test}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{mse}\PY{p}{(}\PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{knn}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{test\PYZus{}x}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        \PY{n}{mse\PYZus{}lst\PYZus{}train}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{mse}\PY{p}{(}\PY{n}{y}\PY{p}{,} \PY{n}{knn}\PY{o}{.}\PY{n}{predict}\PY{p}{(}\PY{n}{train\PYZus{}x}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+        \PY{n}{currenct\PYZus{}mse} \PY{o}{=} \PY{n}{mse\PYZus{}lst\PYZus{}test}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+        \PY{k}{if} \PY{n}{currenct\PYZus{}mse} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{optimal\PYZus{}mse} \PY{o+ow}{or} \PY{n}{optimal\PYZus{}mse} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+            \PY{n}{optimal\PYZus{}mse} \PY{o}{=} \PY{n}{currenct\PYZus{}mse}
+            \PY{n}{not\PYZus{}improve} \PY{o}{=} \PY{l+m+mi}{0}
+        \PY{k}{else}\PY{p}{:}
+            \PY{n}{not\PYZus{}improve} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
         \PY{k}{if} \PY{n}{is\PYZus{}print}\PY{p}{:} \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Parameter k = }\PY{l+s+si}{\PYZob{}k\PYZcb{}}\PY{l+s+s1}{; Model Performance (MSE): }\PY{l+s+si}{\PYZob{}currenct\PYZus{}mse\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-    \PY{k}{return} \PY{n}{k}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{optimal\PYZus{}mse}
+    \PY{k}{if} \PY{n}{is\PYZus{}print}\PY{p}{:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Performance is not improved for 10 rounds.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{k}{if} \PY{n}{is\PYZus{}plot}\PY{p}{:} \PY{n}{plot\PYZus{}k}\PY{p}{(}\PY{n}{mse\PYZus{}lst\PYZus{}test}\PY{p}{,} \PY{n}{mse\PYZus{}lst\PYZus{}train}\PY{p}{)}
+    \PY{k}{return} \PY{n}{k} \PY{o}{\PYZhy{}} \PY{n}{not\PYZus{}improve}\PY{p}{,} \PY{n}{optimal\PYZus{}mse}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{62}{\boxspacing}
+\prompt{In}{incolor}{10}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} stop looking for the optimal k when test MSE no longer decreases as k goes up.}
-\PY{n}{k}\PY{p}{,} \PY{n}{optimal\PYZus{}mse} \PY{o}{=} \PY{n}{train\PYZus{}model}\PY{p}{(}\PY{n}{train\PYZus{}x}\PY{p}{,} \PY{n}{test\PYZus{}x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{y\PYZus{}test}\PY{p}{)}
+\PY{n}{k}\PY{p}{,} \PY{n}{optimal\PYZus{}mse} \PY{o}{=} \PY{n}{train\PYZus{}model}\PY{p}{(}\PY{n}{train\PYZus{}x}\PY{p}{,} \PY{n}{test\PYZus{}x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{is\PYZus{}plot} \PY{o}{=} \PY{k+kc}{True}\PY{p}{)}
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Optimal k: }\PY{l+s+si}{\PYZob{}k\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{Test MSE: }\PY{l+s+si}{\PYZob{}optimal\PYZus{}mse\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
@@ -683,6 +709,24 @@ Parameter k = 3; Model Performance (MSE): 38.01708840946738
 Parameter k = 4; Model Performance (MSE): 34.54505042921676
 Parameter k = 5; Model Performance (MSE): 29.643836178903474
 Parameter k = 6; Model Performance (MSE): 32.15296586511268
+Parameter k = 7; Model Performance (MSE): 33.276044168531136
+Parameter k = 8; Model Performance (MSE): 34.63311073505784
+Parameter k = 9; Model Performance (MSE): 34.176242162142906
+Parameter k = 10; Model Performance (MSE): 34.22440202806502
+Parameter k = 11; Model Performance (MSE): 32.63046457909416
+Parameter k = 12; Model Performance (MSE): 33.649292293483676
+Parameter k = 13; Model Performance (MSE): 35.59585782548111
+Parameter k = 14; Model Performance (MSE): 33.41562235237184
+Parameter k = 15; Model Performance (MSE): 32.94639319047726
+Performance is not improved for 10 rounds.
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A0218869J--HaojunGao_files/A0218869J--HaojunGao_17_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
 Optimal k: 5
 Test MSE: 29.643836178903474
     \end{Verbatim}
@@ -696,7 +740,7 @@ why.}{3. Based on the analysis above, compare the above model with (x, z) being 
 Answer:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{63}{\boxspacing}
+\prompt{In}{incolor}{11}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} transfer the x and x\PYZus{}test to 2D array}
 \PY{n}{train\PYZus{}x\PYZus{}only} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{expand\PYZus{}dims}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}
@@ -705,7 +749,7 @@ Answer:
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{64}{\boxspacing}
+\prompt{In}{incolor}{12}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{k}\PY{p}{,} \PY{n}{optimal\PYZus{}mse} \PY{o}{=} \PY{n}{train\PYZus{}model}\PY{p}{(}\PY{n}{train\PYZus{}x\PYZus{}only}\PY{p}{,} \PY{n}{test\PYZus{}x\PYZus{}only}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{y\PYZus{}test}\PY{p}{)}
 \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Optimal k: }\PY{l+s+si}{\PYZob{}k\PYZcb{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{Test MSE: }\PY{l+s+si}{\PYZob{}optimal\PYZus{}mse\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -719,8 +763,20 @@ Parameter k = 3; Model Performance (MSE): 5.426316500001306
 Parameter k = 4; Model Performance (MSE): 4.843594490271816
 Parameter k = 5; Model Performance (MSE): 4.367417625187504
 Parameter k = 6; Model Performance (MSE): 4.93632176506213
-Optimal k: 5
-Test MSE: 4.367417625187504
+Parameter k = 7; Model Performance (MSE): 4.345399813791887
+Parameter k = 8; Model Performance (MSE): 4.584586639952677
+Parameter k = 9; Model Performance (MSE): 4.500262203638205
+Parameter k = 10; Model Performance (MSE): 4.54648828737431
+Parameter k = 11; Model Performance (MSE): 4.695587787121037
+Parameter k = 12; Model Performance (MSE): 4.833644395839394
+Parameter k = 13; Model Performance (MSE): 4.664975361381074
+Parameter k = 14; Model Performance (MSE): 4.940785220790044
+Parameter k = 15; Model Performance (MSE): 5.022177033161812
+Parameter k = 16; Model Performance (MSE): 5.1323236033672055
+Parameter k = 17; Model Performance (MSE): 5.259768038583954
+Performance is not improved for 10 rounds.
+Optimal k: 7
+Test MSE: 4.345399813791887
     \end{Verbatim}
 
     \hypertarget{explaination-curse-of-dimensionality}{%
@@ -754,8 +810,23 @@ result.}{4. We have seen that the test MSE is significantly worse than what we h
 Answer:
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{103}{\boxspacing}
+\prompt{In}{incolor}{13}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{plot\PYZus{}rounds}\PY{p}{(}\PY{n}{optimal\PYZus{}mse\PYZus{}lst}\PY{p}{)}\PY{p}{:}
+    \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
+    \PY{n}{x} \PY{o}{=} \PY{p}{[}\PY{n+nb}{str}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{optimal\PYZus{}mse\PYZus{}lst}\PY{p}{)}\PY{p}{)}\PY{p}{]}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{optimal\PYZus{}mse\PYZus{}lst}\PY{p}{,}  \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{marker} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{markersize} \PY{o}{=} \PY{l+m+mi}{8}\PY{p}{,} 
+             \PY{n}{markeredgecolor} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{markerfacecolor} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Test MSE}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{MSE with Different Number of Redundant Columns}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{14}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{optimal\PYZus{}mse\PYZus{}lst} \PY{o}{=} \PY{p}{[}\PY{p}{]}
 \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{z}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
     \PY{n}{train\PYZus{}x\PYZus{}incremental} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}
         \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{expand\PYZus{}dims}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{z}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{n}{j}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
@@ -763,35 +834,42 @@ Answer:
         \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{expand\PYZus{}dims}\PY{p}{(}\PY{n}{x\PYZus{}test}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{z\PYZus{}test}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{n}{j}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
     \PY{n}{k}\PY{p}{,} \PY{n}{optimal\PYZus{}mse} \PY{o}{=} \PY{n}{train\PYZus{}model}\PY{p}{(}
         \PY{n}{train\PYZus{}x\PYZus{}incremental}\PY{p}{,} \PY{n}{test\PYZus{}x\PYZus{}incremental}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{y\PYZus{}test}\PY{p}{,} \PY{n}{is\PYZus{}print}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+    \PY{n}{optimal\PYZus{}mse\PYZus{}lst}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{optimal\PYZus{}mse}\PY{p}{)}
     \PY{n+nb}{print}\PY{p}{(}
         \PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Add first }\PY{l+s+si}{\PYZob{}j\PYZcb{}}\PY{l+s+s1}{ columns }\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{ Optimal k: }\PY{l+s+si}{\PYZob{}k\PYZcb{}}\PY{l+s+s1}{ }\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{ Test MSE: }\PY{l+s+si}{\PYZob{}optimal\PYZus{}mse\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{plot\PYZus{}rounds}\PY{p}{(}\PY{n}{optimal\PYZus{}mse\PYZus{}lst}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-Add first 0 columns      Optimal k: 5    Test MSE: 4.367417625187504
+Add first 0 columns      Optimal k: 7    Test MSE: 4.345399813791887
 Add first 1 columns      Optimal k: 5    Test MSE: 7.2142500345041976
-Add first 2 columns      Optimal k: 4    Test MSE: 13.359619107018597
-Add first 3 columns      Optimal k: 2    Test MSE: 15.263100962227195
-Add first 4 columns      Optimal k: 5    Test MSE: 16.674825717732034
-Add first 5 columns      Optimal k: 2    Test MSE: 17.879872756941463
-Add first 6 columns      Optimal k: 2    Test MSE: 24.436585793561473
+Add first 2 columns      Optimal k: 14   Test MSE: 11.961788211788564
+Add first 3 columns      Optimal k: 11   Test MSE: 14.854589640881168
+Add first 4 columns      Optimal k: 7    Test MSE: 15.78371528304405
+Add first 5 columns      Optimal k: 4    Test MSE: 17.400790194657528
+Add first 6 columns      Optimal k: 6    Test MSE: 20.670086059135617
 Add first 7 columns      Optimal k: 5    Test MSE: 22.42699951576807
-Add first 8 columns      Optimal k: 2    Test MSE: 26.47237779960154
+Add first 8 columns      Optimal k: 4    Test MSE: 23.52269690244068
 Add first 9 columns      Optimal k: 8    Test MSE: 24.642352439593413
 Add first 10 columns     Optimal k: 7    Test MSE: 23.370264787676305
 Add first 11 columns     Optimal k: 6    Test MSE: 21.906956923650522
-Add first 12 columns     Optimal k: 4    Test MSE: 25.543163075510957
-Add first 13 columns     Optimal k: 6    Test MSE: 27.054482241553522
-Add first 14 columns     Optimal k: 7    Test MSE: 24.069530259757233
+Add first 12 columns     Optimal k: 7    Test MSE: 23.92850599971722
+Add first 13 columns     Optimal k: 10   Test MSE: 26.650313975995278
+Add first 14 columns     Optimal k: 10   Test MSE: 22.59852873722149
 Add first 15 columns     Optimal k: 7    Test MSE: 23.60896179380117
-Add first 16 columns     Optimal k: 4    Test MSE: 27.17057594236693
+Add first 16 columns     Optimal k: 10   Test MSE: 26.541001053716823
 Add first 17 columns     Optimal k: 5    Test MSE: 26.178734436435576
 Add first 18 columns     Optimal k: 6    Test MSE: 32.814828831731226
 Add first 19 columns     Optimal k: 3    Test MSE: 31.48016670629021
 Add first 20 columns     Optimal k: 5    Test MSE: 29.643836178903474
     \end{Verbatim}
 
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{A0218869J--HaojunGao_files/A0218869J--HaojunGao_24_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
     \hypertarget{explaination-curse-of-dimensionality}{%
 \subparagraph{Explaination: Curse of
 Dimensionality}\label{explaination-curse-of-dimensionality}}
