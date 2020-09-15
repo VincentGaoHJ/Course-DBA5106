@@ -2,10 +2,10 @@ import logging
 from utils.config import LOG_LEVEL
 
 
-logger = logging.getLogger("TAROT LOG")
+logger = logging.getLogger("LOG")
 level = logging.getLevelName(LOG_LEVEL)
 logger.setLevel(level)
-fmt = "TAROT LOG: %(asctime)s [%(levelname)s] %(message)s"
+fmt = "LOG: %(asctime)s [%(levelname)s] %(message)s"
 date_fmt = "%Y-%m-%d %H:%M:%S"
 logging.basicConfig(format=fmt, datefmt=date_fmt)
 
